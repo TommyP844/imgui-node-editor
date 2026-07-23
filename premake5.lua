@@ -10,7 +10,8 @@ project "ImGuiNodeEditor"
     includedirs 
     {
         "",
-        IncludeDirs["imgui"]
+        IncludeDirs["imgui"],
+        IncludeDirs["Engine"]
     }
 
 	files
@@ -44,13 +45,12 @@ project "ImGuiNodeEditor"
         "ImGui"
     }
 
-	optimize "Speed"
-	floatingpoint "Fast"
-	intrinsics "On"
-
     filter { "configurations:Debug" }
         runtime "Debug"
 
     filter {"configurations:Release"}
         runtime "Release"
+        optimize "Speed"
+	    floatingpoint "Fast"
+	    intrinsics "On"
 
